@@ -1,0 +1,74 @@
+:root {
+    --main-color: #FF9800;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+.landing-page{
+    background-image: url(../imeges/01.jpg);
+    min-height: 100vh;
+    background-size: cover;
+    position: relative;
+}
+.landing-page .overlay{
+    background-color: hwb(0deg 0% 100% / 60%);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    position: absolute;
+    z-index: 1;
+}
+.landing-page .header{
+    display: flex;
+    z-index: 2;
+    color: #FFF;
+    position: relative;
+    padding: 15px;
+}
+.landing-page .header .logo{
+    padding: 15px;
+    width: 300px;
+    font-weight: bold;
+}
+.landing-page .header .links{
+    text-align: right;
+    padding-left: 0;
+    width: 100%;
+    padding-right: 20px;
+    font-size: 15px;
+}
+.landing-page .header .links li{
+    display: inline-block;
+    margin-left: 10px;
+}
+.landing-page .header .links li a{
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s;
+}
+.landing-page .header .links li a:hover,
+.landing-page .header .links li a.active{
+    color: var(--main-color);
+}
+.landing-page .introdaction{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+    z-index: 2;
+    color: #FFF;
+    text-align: center;
+}
+.landing-page .introdaction h1{
+    font-size: 34px;
+    margin: 0 0 12px;
+}
+.landing-page .introdaction h1 span{
+    color: var(--main-color);
+}
+.landing-page .introdaction p{
+    line-height: 1.6;
+    margin: 0;
+    font-size: 20px;
+} 

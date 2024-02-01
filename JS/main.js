@@ -2,8 +2,10 @@
 let mainColors = localStorage.getItem("color-option");
 if(mainColors !== null){
     document.documentElement.style.setProperty("--main-color", mainColors);
+    // remove all active classes 
     document.querySelectorAll(".colors-list li").forEach(element => {
         element.classList.remove("active");
+        // add active class 
         if(mainColors === element.dataset.color){
             element.classList.add("active");
         }
@@ -35,6 +37,29 @@ colorsLi.forEach(li => {
     });
 });
 
+
+
+// Random background option 
+let backgroundOption = true;
+// this element to control background Interval 
+let backgroundInterval;
+// store value in localStorage 
+let backgroundLocalItem = localStorage.getItem("background-option");
+if(backgroundLocalItem !== null){
+    // to change active class 
+    document.querySelectorAll(".random-background span").forEach(element => {
+        element.classList.remove("active");
+    });
+    // if this true function will work
+    if(backgroundLocalItem === 'true'){
+        backgroundOption = true;
+        randomizeImgs();
+        document.querySelector(".random-background .yes").classList.add("active");
+    } else{
+        backgroundOption = false;
+        document.querySelector(".random-background .no").classList.add("active");
+    }
+}
 // switch random background option to choisen element 
 const randomBackEl = document.querySelectorAll(".setting-container .random-background span");
 randomBackEl.forEach(span => {
@@ -43,22 +68,30 @@ randomBackEl.forEach(span => {
             element.classList.remove("active");
         })
         e.target.classList.add("active");
-    })
-})
 
-// First way to change photo every five seconds:
+        // this condation to know you want change backgroundImage every 10 second or not 
+        if(e.target.dataset.background === 'yes'){
+            backgroundOption = true;
+            randomizeImgs();
+            localStorage.setItem("background-option" , true);
+        } else{
+            backgroundOption = false;
+            clearInterval(backgroundInterval);
+            localStorage.setItem("background-option", false);
+        }
+    })
+});
 // Selet Random pager element 
 let landingPage = document.querySelector(".landing-page");
 // Get images 
 let imgsArray = ["01.jpg" , "02.jpg" ,"03.jpg" ,"04.jpg" ,"05.jpg" ];
 // Function to change img 
-setInterval(() => {
-    let randomNumber = Math.floor(Math.random() * imgsArray.length);
-    landingPage.style.backgroundImage = 'url("imeges/'+ imgsArray[randomNumber] +'")';
-} , 5000);
-
-// // Second way to change photo every five seconds:
-// setInterval(() => {
-//     let randomNumber = Math.floor(Math.random() * 5);
-//     document.querySelector(".landing-page").style.backgroundImage = 'url("imeges/0'+ randomNumber +'.jpg")';
-// } , 5000);
+function randomizeImgs(){
+    if(backgroundOption){
+        backgroundInterval = setInterval(() => {
+            let randomNumber = Math.floor(Math.random() * imgsArray.length);
+            landingPage.style.backgroundImage = 'url("imeges/'+ imgsArray[randomNumber] +'")';
+        } , 1000);
+        
+    }
+}

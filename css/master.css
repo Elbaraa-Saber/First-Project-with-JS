@@ -4,6 +4,37 @@
 body{
     font-family: 'Open Sans', sans-serif;
 }
+/* Start setting-box  */
+.setting-box {
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: -200px;
+    min-height: 100vh;
+    z-index: 1000;
+    width: 200px;
+    transition: 0.3s;
+}
+.setting-box.open {
+    left: 0;
+}
+.setting-box .toggle-settings {
+    position: absolute;
+    right: -30px;
+    top: 100px;
+    text-align: center;
+    cursor: pointer;
+    background-color: white;
+    font-size: 20px;
+}
+.setting-box .toggle-settings {
+    width: 30px;
+    padding: 8px 0;
+}
+/* End setting-box  */
+
+
+/* Start landing page  */
 .landing-page{
     background-image: url(../imeges/01.jpg);
     min-height: 100vh;
@@ -36,6 +67,7 @@ body{
     padding-left: 0;
     width: 100%;
     padding-right: 20px;
+    list-style: none;
     font-size: 15px;
 }
 .landing-page .header .links li{
@@ -72,3 +104,4 @@ body{
     margin: 0;
     font-size: 20px;
 } 
+/* End landing page  */

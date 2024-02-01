@@ -1,5 +1,12 @@
-// First way to change photo every five seconds:
+//Add spin to gear icon
+document.querySelector(".setting-box .toggle-settings i").onclick = function (){
+    // Add fa-spiin for rotation on self
+    this.classList.toggle("fa-spin");
+    // Add open class for setting-box for open this element in screen
+    document.querySelector(".setting-box").classList.toggle("open");
+}
 
+// First way to change photo every five seconds:
 // Selet Random pager element 
 let landingPage = document.querySelector(".landing-page");
 // Get images 

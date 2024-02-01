@@ -1,6 +1,9 @@
 :root {
     --main-color: #FF9800;
 }
+* {
+    box-sizing: border-box;
+}
 body{
     font-family: 'Open Sans', sans-serif;
 }
@@ -31,32 +34,31 @@ body{
     width: 30px;
     padding: 8px 0;
 }
-.setting-box .setting-container{
-    
-}
 .setting-box .setting-container .option-box{
     padding: 10px;
-    background-color: #eee;
+    background-color: #cccccc;
     margin: 10px;
     text-align: center;
 }
 .setting-box  .option-box h4{
     margin: 0;
+    font-size: 14px;
     color: #666;
 }
 .setting-box .option-box .colors-list{
     list-style: none;
     padding: 0;
-    text-align: center
+    margin: 10px 0 0;
+    text-align: center;
 }
 .setting-box .option-box .colors-list li{
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
     background-color: black;
     opacity: 1;
     display: inline-block;
-    border: 3px solid #eee;
+    border: 3px solid #cccccc;
     cursor: pointer;
 }
 .setting-box .option-box .colors-list .active {
@@ -76,6 +78,22 @@ body{
 }
 .setting-box .option-box .colors-list li:nth-child(5){
     background-color: #4CAF50;
+}
+.setting-box .option-box:nth-child(2) span{
+    background-color: var(--main-color);
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-top: 10px;
+    display: inline-block;
+    cursor: pointer;
+    width: 50px;
+    opacity: 0.5;
+}
+.setting-box .option-box:nth-child(2) span.active{
+    opacity: 1;
 }
 
 /* End setting-box  */
@@ -138,6 +156,7 @@ body{
     z-index: 2;
     color: #FFF;
     text-align: center;
+    width: 100%;
 }
 .landing-page .introdaction h1{
     font-size: 34px;

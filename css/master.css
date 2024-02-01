@@ -31,6 +31,53 @@ body{
     width: 30px;
     padding: 8px 0;
 }
+.setting-box .setting-container{
+    
+}
+.setting-box .setting-container .option-box{
+    padding: 10px;
+    background-color: #eee;
+    margin: 10px;
+    text-align: center;
+}
+.setting-box  .option-box h4{
+    margin: 0;
+    color: #666;
+}
+.setting-box .option-box .colors-list{
+    list-style: none;
+    padding: 0;
+    text-align: center
+}
+.setting-box .option-box .colors-list li{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: black;
+    opacity: 1;
+    display: inline-block;
+    border: 3px solid #eee;
+    cursor: pointer;
+}
+.setting-box .option-box .colors-list .active {
+    border-color: #fff;
+}
+.setting-box .option-box .colors-list li:first-child{
+    background-color: #FF9800;
+}
+.setting-box .option-box .colors-list li:nth-child(2){
+    background-color: #E91E63;
+}
+.setting-box .option-box .colors-list li:nth-child(3){
+    background-color: #009688;
+}
+.setting-box .option-box .colors-list li:nth-child(4){
+    background-color: #03A9F4;
+}
+.setting-box .option-box .colors-list li:nth-child(5){
+    background-color: #4CAF50;
+}
+
 /* End setting-box  */
 
 

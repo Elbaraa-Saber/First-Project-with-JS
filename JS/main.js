@@ -5,6 +5,14 @@ document.querySelector(".setting-box .toggle-settings i").onclick = function (){
     // Add open class for setting-box for open this element in screen
     document.querySelector(".setting-box").classList.toggle("open");
 }
+// Switch colors 
+const colorsLi = document.querySelectorAll(".colors-list li");
+// Loop 
+colorsLi.forEach(li => {
+    li.addEventListener("click" , (e) => {
+        document.documentElement.style.setProperty("--main-color" , e.target.dataset.color);
+    });
+});
 
 // First way to change photo every five seconds:
 // Selet Random pager element 

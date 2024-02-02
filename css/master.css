@@ -6,6 +6,32 @@
 }
 body{
     font-family: 'Open Sans', sans-serif;
+    height: 5000px;
+}
+.scroller{
+    height: 5px;
+    width: 0;
+    background-color: var(--main-color);
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+.scroll-up{
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    background-color: var(--main-color);
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    display: none;
+    cursor: pointer;
+}
+.scroll-up.show{
+    display: flex;
 }
 .container{
     width: 1170px;

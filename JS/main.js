@@ -1,3 +1,25 @@
+// scroller line in page &&
+// add bution to up
+let el = document.querySelector(".scroller");
+// for called button
+let elToUp = document.querySelector(".scroll-up");
+let heightOfPage = this.innerHeight;
+let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+window.addEventListener("scroll" , () => {
+    // this for show button 
+    let scrollTop = document.documentElement.scrollTop;
+    // for bar in windwo 
+    el.style.width = `${(scrollTop / height) * 100}%`;
+    this.scrollY > heightOfPage ? elToUp.classList.add("show") : elToUp.classList.remove("show");
+});
+// when user click on the button, return to 0
+elToUp.onclick = function(){
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+    });
+}
+
 // How to charge element in localStorage 
 let mainColors = localStorage.getItem("color-option");
 if(mainColors !== null){

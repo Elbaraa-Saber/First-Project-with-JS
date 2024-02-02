@@ -45,6 +45,7 @@ let backgroundOption = true;
 let backgroundInterval;
 // store value in localStorage 
 let backgroundLocalItem = localStorage.getItem("background-option");
+let backgroundRandomImage = localStorage.getItem("random_background");
 if(backgroundLocalItem !== null){
     // to change active class 
     document.querySelectorAll(".random-background span").forEach(element => {
@@ -58,6 +59,7 @@ if(backgroundLocalItem !== null){
     } else{
         backgroundOption = false;
         document.querySelector(".random-background .no").classList.add("active");
+        document.querySelector(".landing-page").style.setProperty("background-image",'url("imeges/'+ backgroundRandomImage +'")' );
     }
 }
 // switch random background option to choisen element 
@@ -78,6 +80,7 @@ randomBackEl.forEach(span => {
             backgroundOption = false;
             clearInterval(backgroundInterval);
             localStorage.setItem("background-option", false);
+            //document.querySelector(".landing-page").style.setProperty("background-image",'url("imeges/'+ backgroundRandomImage +'")' );
         }
     })
 });
@@ -91,7 +94,7 @@ function randomizeImgs(){
         backgroundInterval = setInterval(() => {
             let randomNumber = Math.floor(Math.random() * imgsArray.length);
             landingPage.style.backgroundImage = 'url("imeges/'+ imgsArray[randomNumber] +'")';
+            localStorage.setItem("random_background", imgsArray[randomNumber]);
         } , 1000);
-        
     }
 }

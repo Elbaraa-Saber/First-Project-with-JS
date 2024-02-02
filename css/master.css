@@ -7,6 +7,16 @@
 body{
     font-family: 'Open Sans', sans-serif;
 }
+.container{
+    width: 1170px;
+    padding: 0 15px;
+    margin: auto;
+}
+@media(min-width: 992px){
+    .container{
+        max-width: 960px;
+    }
+}
 /* Start setting-box  */
 .setting-box {
     background-color: white;

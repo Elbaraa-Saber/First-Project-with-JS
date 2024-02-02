@@ -141,3 +141,41 @@ window.onscroll = function (){
         })
     }
 }
+
+// Create Popup with the Image 
+let Imgsgallery = document.querySelectorAll(".gallery img");
+Imgsgallery.forEach(img => {
+    img.addEventListener("click" , (e) => {
+        // Create overlay element 
+        let overlay = document.createElement("div");
+        overlay.className= ('popup-overlay');
+        document.body.appendChild(overlay);
+        // create pupup element 
+        let popupImg = document.createElement("div");
+        popupImg.className=('pupup-img');
+        if(img.alt !== null){
+            let headOfPopup = document.createElement("h3");
+            let textHead = document.createTextNode(img.alt);
+            headOfPopup.appendChild(textHead);
+            popupImg.appendChild(headOfPopup);
+        }
+        // create img element 
+        let ImageInPopup = document.createElement("img");
+        ImageInPopup.src = img.src;
+        popupImg.appendChild(ImageInPopup);
+        document.body.appendChild(popupImg);
+        // create close element 
+        let closer = document.createElement("span");
+        closer.className = ('close-popup');
+        let closeIcon = document.createElement("i");
+        closeIcon.className = ('fa-solid fa-xmark');
+        closer.appendChild(closeIcon);
+        popupImg.appendChild(closer);
+    });
+});
+document.addEventListener("click", function (e) {
+    if(e.target.className == 'close-popup'){
+        e.target.parentNode.remove();
+        document.querySelector(".popup-overlay").remove();
+    }
+});

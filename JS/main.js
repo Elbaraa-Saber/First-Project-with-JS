@@ -98,3 +98,24 @@ function randomizeImgs(){
         } , 1000);
     }
 }
+
+
+// sellect skills box 
+let ourSkills = document.querySelector(".our-skills");
+window.onscroll = function (){
+    // height page to skill element 
+    let skillsOffsetTop = ourSkills.offsetTop;
+    // height skill element 
+    let skillsOuterHeight = ourSkills.offsetHeight;
+    // height page of computer 
+    let windowHeight = this.innerHeight;
+    // height of scroll 
+    let windowScrollTop = this.scrollY;
+
+    if(windowScrollTop > (skillsOffsetTop + skillsOuterHeight - windowHeight)){
+        let allSkills = document.querySelectorAll(".skill-box .skill-progress span");
+        allSkills.forEach(skill => {
+            skill.style.width = skill.dataset.progress;
+        })
+    }
+}

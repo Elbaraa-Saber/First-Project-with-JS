@@ -51,11 +51,7 @@ colorsLi.forEach(li => {
         // Add color in localStorage 
         localStorage.setItem("color-option" , e.target.dataset.color );
         // Remove all active class from all elements 
-        e.target.parentElement.querySelectorAll(".active").forEach(element => {
-            element.classList.remove("active");
-        });
-        // add active class for choisen element 
-        e.target.classList.add("active");
+        removeAndAddActive(e);
     });
 });
 
@@ -88,11 +84,7 @@ if(backgroundLocalItem !== null){
 const randomBackEl = document.querySelectorAll(".setting-container .random-background span");
 randomBackEl.forEach(span => {
     span.addEventListener("click" , (e) => {
-        e.target.parentElement.querySelectorAll(".active").forEach(element => {
-            element.classList.remove("active");
-        })
-        e.target.classList.add("active");
-
+        removeAndAddActive(e);
         // this condation to know you want change backgroundImage every 10 second or not 
         if(e.target.dataset.background === 'yes'){
             backgroundOption = true;
@@ -197,3 +189,13 @@ function gootElement (element) {
 }
 gootElement(bulletsAll);
 gootElement(allLinks);
+
+
+// Handle active class
+function removeAndAddActive (e){
+    e.target.parentElement.querySelectorAll(".active").forEach(element => {
+        element.classList.remove("active");
+    });
+    // add active class for choisen element 
+    e.target.classList.add("active");
+};

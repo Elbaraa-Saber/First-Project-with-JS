@@ -49,6 +49,29 @@
     </div>
     <!-- End Setting box -->
 
+    <!-- Start nav bullet -->
+    <div class="bullets">
+        <div class="bullet" data-link=".about-us">
+            <div class="tooltip" >About Us</div>
+        </div>
+        <div class="bullet" data-link=".our-skills">
+            <div class="tooltip" >Our Skills</div>
+        </div>
+        <div class="bullet" data-link=".gallery">
+            <div class="tooltip" >Gallery</div>
+        </div>
+        <div class="bullet" data-link=".timeline">
+            <div class="tooltip" >Timeline</div>
+        </div>
+        <div class="bullet" data-link=".our-features">
+            <div class="tooltip" >Our Features</div>
+        </div>
+        <div class="bullet" data-link=".testimonials">
+            <div class="tooltip" >Testimonails</div>
+        </div>
+    </div>
+    <!-- End nav bullet -->
+
     <!-- Start Landing page -->
     <div class="landing-page">
         <div class="overlay"></div>
@@ -56,12 +79,12 @@
             <div class="header">
                 <div class="logo">Special Design</div>
                 <ul class="links">
-                    <li> <a href="#">About</a></li>
-                    <li><a href="#">Skills</a></li>
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="#">Timeline</a></li>
-                    <li><a href="#">Features</a></li>
-                    <li><a href="#">Testimonails</a></li>
+                    <li> <a href="#" data-link=".about-us">About</a></li>
+                    <li><a href="#" data-link=".our-skills">Skills</a></li>
+                    <li><a href="#" data-link=".gallery">Gallery</a></li>
+                    <li><a href="#" data-link=".timeline">Timeline</a></li>
+                    <li><a href="#" data-link=".our-features">Features</a></li>
+                    <li><a href="#" data-link=".testimonials">Testimonails</a></li>
                 </ul>
             </div>
         </div>
@@ -73,7 +96,7 @@
     <!-- End Landing page -->
 
     <!-- Start About Us -->
-    <div class="container">
+    <div class="container" id="about">
         <div class="about-us">
             <div class="text">
                 <h2>About Us</h2>
@@ -87,7 +110,7 @@
     <!-- End About Us -->
 
     <!-- Start Our Skills  -->
-    <div class="our-skills">
+    <div class="our-skills" id="skills">
         <div class="container">
             <h2>Our Skills</h2>
             <div class="skill-box">
@@ -131,7 +154,7 @@
     <!-- End Our Skills  -->
 
     <!-- Start Our Gallery  -->
-    <div class="gallery">
+    <div class="gallery" id="gallery">
         <div class="container">
             <h2>Our Gallery</h2>
             <div class="box-imgs">
@@ -151,7 +174,7 @@
     <!-- End Our Gallery  -->
 
     <!-- Start Timeline  -->
-    <div class="timeline">
+    <div class="timeline" id="timeline">
         <div class="container">
             <div class="timeline-content">
                 <div class="year">2023</div>
@@ -190,13 +213,14 @@
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates distinctio harum cum, maiores praesentium, quidem repudiandae consequuntur consectetur est aliquid quasi molestias fugit blanditiis atque inventore corrupti omnis error possimus.</p>
                     </div>
                 </div>
+                <div class="clearfix"></div>
             </div>
         </div>
     </div>
     <!-- End Timeline  -->
 
     <!-- Start Features  -->
-    <div class="features">
+    <div class="our-features" id="features">
         <h2>Our Features</h2>
         <div class="container">
             <div class="feet-box">
@@ -229,9 +253,49 @@
                 <h4>Seo</h4>
                 <p>We are professional marketeers, we will do anything you imagine in no time.</p>
             </div>
+            <div class="clearfix"></div>
         </div>
     </div>
     <!-- End Features  -->
+
+    <!-- Start Testimonails  -->
+    <div class="testimonials" id="testimonails">
+        <div class="container">
+            <h2>Testimonails</h2>
+            <div class="tst-box">
+                <p>Iam very happy with the product its amazing and i recieve it very fast and the price was amazing.</p>
+                <div class="user">
+                    <img src="imeges/team-01.png" alt="">
+                    <div class="text">
+                        <h4>Elbaraa Saber</h4>
+                        <p>CEO At Company</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tst-box">
+                <p>Iam very happy with the product its amazing and i recieve it very fast and the price was amazing.</p>
+                <div class="user">
+                    <img src="imeges/team-02.png" alt="">
+                    <div class="text">
+                        <h4>Alona</h4>
+                        <p>CEO At Company</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tst-box">
+                <p>Iam very happy with the product its amazing and i recieve it very fast and the price was amazing.</p>
+                <div class="user">
+                    <img src="imeges/team-03.png" alt="">
+                    <div class="text">
+                        <h4>Yosef Mohamed</h4>
+                        <p>CEO At Company</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <!-- End Testimonails  -->
     <script src="JS/main.js"></script>
 </body>
 </html>

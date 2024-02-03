@@ -179,3 +179,21 @@ document.addEventListener("click", function (e) {
         document.querySelector(".popup-overlay").remove();
     }
 });
+
+
+// Go to element which choised user 
+let bulletsAll = document.querySelectorAll(".bullets .bullet");
+let allLinks = document.querySelectorAll(".header .links a");
+
+function gootElement (element) {
+    element.forEach(el => {
+    el.addEventListener("click", (e) => {
+        e.preventDefault();
+        document.querySelector(e.target.dataset.link).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+}
+gootElement(bulletsAll);
+gootElement(allLinks);

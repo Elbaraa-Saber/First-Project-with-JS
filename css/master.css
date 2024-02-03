@@ -41,30 +41,7 @@ body{
     padding: 0 15px;
     margin: auto;
 }
-/* phones  */
-@media(min-width: 576px){
-    .container{
-        max-width: 540px;
-    }
-}
-/* medium devices  */
-@media(min-width: 768px){
-    .container{
-        max-width: 720px;
-    }
-}
-/* PC  */
-@media(min-width: 992px){
-    .container{
-        max-width: 960px;
-    }
-}
-/* Large screen  */
-@media (min-width: 1200px ){
-    .container{
-        max-width: 1140px;
-    }
-}
+
 /* Start setting-box  */
 .setting-box {
     background-color: white;
@@ -246,13 +223,36 @@ body{
     width: 300px;
     font-weight: bold;
 }
-.landing-page .header .links{
+.landing-page .header .links-container {
     text-align: right;
-    padding-left: 0;
     width: 100%;
-    padding-right: 20px;
+}
+.landing-page .header .links{
+    padding-left: 0;
     list-style: none;
     font-size: 15px;
+}
+.landing-page .header .list {
+    background: none;
+    border: none;
+    width: 40px;
+    position: relative;
+    display: none;
+    cursor: pointer;
+}
+.landing-page .header .list.list-active::before {
+    content: "";
+    position: absolute;
+    border: 10px solid;
+    border-color: transparent transparent white transparent;
+    left: 10px;
+    top: 30px;
+}
+.landing-page .header .list span{
+    display: block;
+    height: 4px;
+    background-color: white;
+    margin-bottom: 4px;
 }
 .landing-page .header .links li{
     display: inline-block;
@@ -738,6 +738,64 @@ body{
     transition: 0.3s;
 }
 /* End Contact us  */
+
+
+/* Start grid  */
+/* for container  */
+/* phones  */
+@media(min-width: 576px){
+    .container{
+        max-width: 540px;
+    }
+}
+/* medium devices  */
+@media(min-width: 768px){
+    .container{
+        max-width: 720px;
+    }
+}
+/* PC  */
+@media(min-width: 992px){
+    .container{
+        max-width: 960px;
+    }
+}
+/* Large screen  */
+@media (min-width: 1200px ){
+    .container{
+        max-width: 1140px;
+    }
+}
+/* for tiggles list  */
+@media (max-width: 991px){
+    .header .links-container .links{
+        display: none;
+    }
+    .header .links-container .list{
+        display: inline-block;
+    }
+    .header .links-container .links.open{
+        background-color: white;
+        display: block;
+        padding: 10px;
+        width: 100%;
+        top: 50px;
+        position: absolute;
+        left: 0px;
+        border-radius: 6px;
+        text-align: left;
+    }
+    .header .links-container .links.open li {
+        display: block;
+        margin: 10px;
+    }
+    .header .links-container .links.open li a{
+        color: var(--main-color);
+        font-size: 17px;
+        font-weight: bold;
+    }
+}
+/* End grid  */
 
 /* Start animation  */
 

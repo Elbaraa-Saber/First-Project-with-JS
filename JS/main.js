@@ -239,3 +239,23 @@ document.querySelector(".reset-options").onclick = function (){
     // localStorage.removeItem("color-option");
     window.location.reload();
 }
+
+let toggenButton = document.querySelector(".list");
+let tlinks = document.querySelector(".links");
+toggenButton.onclick = function(e){
+    e.stopPropagation();
+    tlinks.classList.toggle("open");
+    this.classList.toggle("list-active");
+}
+
+document.addEventListener("click", (e) => {
+    if(e.target !== toggenButton && e.target !== tlinks){
+        if(tlinks.classList.contains("open") && toggenButton.classList.contains("list-active")){
+            toggenButton.classList.toggle("list-active");
+            tlinks.classList.toggle("open");
+        }
+    }
+});
+tlinks.onclick = function(e){
+    e.stopPropagation();
+}

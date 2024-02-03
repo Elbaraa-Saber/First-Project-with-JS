@@ -369,3 +369,96 @@ body{
 }
 
 /* End Gallery  */
+
+/* Start Timeline */
+.timeline{
+    padding: 50px 0;
+    background-color: #eee;
+}
+.timeline-content {
+    position: relative;
+    overflow: hidden;
+}
+.timeline-content::before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background-color: var(--main-color);
+    left: 50%;
+    margin-left: -1px;
+    top: 0;
+}
+.timeline-content .year {
+    text-align: center;
+    background-color: var(--main-color);
+    width: fit-content;
+    position: relative;
+    margin: 20px auto;
+    padding: 2px 5px;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+    z-index: 2;
+}
+.timeline-content .left{
+    float: left;
+}
+.timeline-content .left::before{
+    right: -35px;
+}
+.timeline-content .right::before{
+    left: -35px;
+}
+.timeline-content .left::before,
+.timeline-content .right::before{
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background-color: white;
+    border: 3px solid var(--main-color);
+    border-radius: 50%;
+    top: 20px;
+}
+.timeline-content .right{
+    float: right;
+}
+.timeline-content .left ,
+.timeline-content .right {
+    width: calc(50% - 25px);
+    margin-bottom: 20px;
+    position: relative;
+}
+.timeline-content .content {
+    padding: 20px;
+    background-color: white;
+}
+.timeline-content .content::before {
+    content: '';
+    border: 10px solid;
+    position: absolute;
+    top: 20px;
+}
+.timeline-content .left .content::before {
+    right: -20px;
+    border-color: transparent transparent transparent white;
+}
+.timeline-content .right .content::before {
+    left: -20px;
+    border-color: transparent white transparent transparent ;
+}
+.timeline-content .content h3 {
+    color: var(--main-color);
+    font-weight: bold;
+    margin: 0 0 10px;
+}
+.timeline-content .content p {
+    color: #666;
+    margin: 0;
+    line-height: 1.6;
+}
+.timeline-content .clearfix {
+    clear: both;
+}
+/* End Timeline */

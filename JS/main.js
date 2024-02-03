@@ -64,6 +64,7 @@ let backgroundInterval;
 // store value in localStorage 
 let backgroundLocalItem = localStorage.getItem("background-option");
 let backgroundRandomImage = localStorage.getItem("random_background");
+
 if(backgroundLocalItem !== null){
     // to change active class 
     document.querySelectorAll(".random-background span").forEach(element => {
@@ -199,3 +200,42 @@ function removeAndAddActive (e){
     // add active class for choisen element 
     e.target.classList.add("active");
 };
+
+let showBullets = document.querySelectorAll(".show-bullets span");
+let navBullets = document.querySelector(".bullets");
+let showBulletsLocal = localStorage.getItem("bullets-option");
+
+if(showBulletsLocal !== null){
+    showBullets.forEach(ele => {
+        ele.classList.remove("active");
+    });
+    if(showBulletsLocal === 'block'){
+        navBullets.style.display = 'block';
+        document.querySelector(".show-bullets .yes").classList.add("active");
+    }else {
+        navBullets.style.display = 'none';
+        document.querySelector(".show-bullets .no").classList.add("active");
+    }
+}
+
+showBullets.forEach (bollet => {
+    bollet.addEventListener("click", (e) => {
+        
+        if(bollet.dataset.display === "show"){
+            navBullets.style.display = 'block';
+            localStorage.setItem("bullets-option", "block");
+        } else {
+            navBullets.style.display = 'none';
+            localStorage.setItem("bullets-option", "none");
+        }
+        removeAndAddActive(e);
+    });
+});
+
+document.querySelector(".reset-options").onclick = function (){
+    localStorage.clear();
+    // localStorage.removeItem("bullets-option");
+    // localStorage.removeItem("background-option");
+    // localStorage.removeItem("color-option");
+    window.location.reload();
+}

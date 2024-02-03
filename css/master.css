@@ -130,7 +130,7 @@ body{
 .setting-box .option-box .colors-list li:nth-child(5){
     background-color: #4CAF50;
 }
-.setting-box .option-box:nth-child(2) span{
+.setting-box .option-box span{
     background-color: var(--main-color);
     color: white;
     font-size: 13px;
@@ -143,8 +143,21 @@ body{
     width: 50px;
     opacity: 0.5;
 }
-.setting-box .option-box:nth-child(2) span.active{
+.setting-box .option-box span.active{
     opacity: 1;
+}
+.setting-box .reset-options {
+    border: none;
+    background-color: #dd0606;
+    color: white;
+    padding: 10px;
+    width: 178px;
+    margin: 10px auto;
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
 /* End setting-box  */

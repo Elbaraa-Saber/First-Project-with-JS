@@ -20,6 +20,24 @@ elToUp.onclick = function(){
     });
 }
 
+
+// Add bullets auto 
+let allSections = document.querySelectorAll(".section");
+allSections.forEach((e) => {
+    let bulletEle = document.createElement("div");
+    bulletEle.classList.add("bullet");
+    let toolTip = document.createElement("div");
+    bulletEle.setAttribute('data-link', e.dataset.link);
+    toolTip.classList.add("tooltip");
+    let dataText = e.dataset.ele;
+    toolTip.textContent;
+    let text = document.createTextNode(dataText);
+    toolTip.appendChild(text);
+    bulletEle.appendChild(toolTip);
+    document.querySelector(".bullets").appendChild(bulletEle);
+});
+
+
 // How to charge element in localStorage 
 let mainColors = localStorage.getItem("color-option");
 if(mainColors !== null){
@@ -33,6 +51,7 @@ if(mainColors !== null){
         }
     });
 }
+
 
 //Add spin to gear icon
 document.querySelector(".setting-box .toggle-settings i").onclick = function (){
